@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- Meta data to improve SEO (Search Engine Optimization) -->
+      <meta content="Restaurant, Italian, Pasta, Pizza," name="keywords">
+      <meta content="Al Forno, the best and most authentic Italian restaurant in Dublin." name="description">
+      <!-- Include the style.css file -->
+      <link rel="stylesheet" href="style.css">
+      <title>Al Forno - Home</title>
+      <!-- JavaScript function which brings the user to the resturants order page when the order button is pressed. -->
+      <script>
+         function go_Order() {
+           window.location.href = "order.html";
+         }
+      </script>
+      <!-- CSS for the Covid 19 warning stating that the resturant is only offering collection and delivery at the moment due to restrictions. -->
+      <!-- Move the warning statement further up the screen so that it isn't covered by the order button below it. -->
+      <style>
+         #warning{
+            padding-bottom: 20%; 
+            color: yellow;
+            font-size: 1.5rem;
+            text-align:center;
+         }
+         @media screen and (max-width: 890px) {
+            #warning{
+               padding-bottom: 40%; 
+            }
+         }
+      </style>
+   </head>
+   <body>
+      <!-- Websites navigation bar. Include hyperlinks to all of the websites html pages. -->
+      <nav id='nav'>
+         <div class='home group-elements' >
+            <a class="nav-element" href="index.html" style="color: white;">AL FORNO</a>
+         </div>
+         <div class='menus group-elements'>
+            <div class="spacing"></div>
+            <a class='nav-element' href='order.html'>Order</a>
+            <a class='nav-element' href='gallery.html'>Gallery</a>
+            <a class='nav-element' href='about.html'>About</a>
+         </div>
+      </nav>
+      <section class='sect-1'>
+         <!-- Covid 19 Warning -->
+         <div id = "warning"><br>Delivery/Collection only due to Covid 19</div>
+         <!-- The order button which brings the user to the resturants order page when pressed.-->
+         <h2 style="border-radius: 25px;">
+            <button id="orderButton" onclick="go_Order()">Order Now</button>
+         </h2>
+      </section>
+      <section class='sect-2'>
+         <!-- The mission/aim of Al Forno as a resturant. -->
+         <div id = "mission">
+            <h1><u>Our Mission</u></h1>
+            <p>Al Forno is a resturant which prides itself in cooking authentic Italian dishes since 2019. We aim to bring <em>il gusto dell'italia</em> to Ireland.</p>
+            <p>We at Al Forno pride ourselves in our ability to hand make our own pasta like Linguine and Penne along with our delicious hand molded pizza bases. </p>
+            <p>The mission of our restaurant echoes the late Pavarotti: <em>“One of the very nicest things about life is the way we must regularly stop whatever it is we are doing and devote our attention to eating.”</em>
+            </p>
+            <br>
+            <p>Please watch this short video which will give you insight into our high standard of making our own home-made pasta:</p>
+            <!-- Include an ifram containing a YouTube which explains how to make pasta from scratch. -->
+            <!-- YouTube iframe Source: https://www.youtube.com/embed/YNHqjFyk5gU -->
+            <div>
+               <iframe class="iframes" width="600" height="315" src="https://www.youtube.com/embed/YNHqjFyk5gU" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <br><br>
+            <p>We are located here at the top of O'Connell Street:</p>
+            <!-- An ifram which shows the location of Al Forno on the Google Maps. -->
+            <!-- iframe source: Google Maps -->
+            <iframe class="iframes" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2381.5538859540884!2d-6.262967584161359!3d53.35124157998001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48670e869f3ecf2f%3A0x52351ba3ab63e170!2sO&#39;Connell%20Street%20Upper%2C%20Dublin!5e0!3m2!1sen!2sie!4v1617587805854!5m2!1sen!2sie" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <br><br>
+         </div>
+      </section>
+      <br><br>
+      <!-- Website footer containing the resturants name, address and phone number. -->
+      <footer style="text-align: center; margin: 0%;">
+         <hr>
+         <h2>Al Forno &copy;</h2>
+         O'Connell Street Upper,<br>
+         Dublin 1<br>
+         01548614624
+         <br><br>
+      </footer>
+   </body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- Include the style.css file along with the order.js file which process the user's order. -->
+      <link rel="stylesheet" href="style.css">
+      <script src="restaurant-order.js"></script>
+      <title>Al Forno - Order</title>
+   </head>
+   <body>
+      <!-- Websites navigation bar. Include hyperlinks to all of the websites html pages. -->
+      <nav id='nav'>
+         <div class='home group-elements'>
+            <a class="nav-element" href="index.html">AL FORNO</a>
+         </div>
+         <div class='menus group-elements'>
+            <div class="spacing">
+            </div>
+            <a class='nav-element' href='order.html'>Order</a>
+            <a class='nav-element' href='gallery.html'>Gallery</a>
+            <a class='nav-element' href='about.html'>About</a>
+         </div>
+      </nav>
+      <!-- All Forno Restaurant Menu -->
+      <div id="order">
+         <br><br><br><br>
+         <hr>
+         <p style="color:rgb(20,168,23); text-align: center;"><strong>Our ordering hours are from 5pm - 11pm!</strong></p>
+         <h1 style="text-align: center;"><u>Menu</u></h1>
+         <h2 style="text-align: center; color: #d40808;"><em>Current Promotion: The Couple Deal - €5 off if you spend over €25!</em></h2>
+         <div id="menus" style="margin-left: 2%;">
+            <br>
+            <!-- Use a form to allow the user to select items from the menu -->
+            <!-- Include text boxes so that the user can enter how much of each item they would like to order -->
+            <form id="menu">
+               <strong>Please Select:</strong>
+               <input type="radio" name="order_type" id="collection">
+               <label for="collection">Collection</label>
+               <strong>&nbsp;<u>OR</u>&nbsp;</strong>
+               <input type="radio" name="order_type" id="delivery">
+               <label for="delivery">Delivery</label>
+               <p><br><em>Enter the quantity of your order in boxes below: </em></p>
+               <h3>STARTERS</h3>
+               <label for="caprese">&bullet; Caprese &emsp; €7.90 </label>
+               <input type="text" id="caprese" class="quantity-box" value="0">
+               <br><em>&emsp; Mozzarella, tomatoes, basil and balsamic glaze</em>
+               <br><br><br>
+               <label for="salad">&bullet; House Salad &emsp; €6.00 </label>
+               <input type="text" id="salad" class="quantity-box" value="0">
+               <br><em>&emsp; Rocket, ciliegine, raddish, sweetcorn, cherry tomato</em>
+               <hr>
+               <h3>PIZZAS</h3>
+               <label for="margherita-p">&bullet; Margherita &emsp; €10.50</label>
+               <input type="text" id="margherita-p" class="quantity-box" value="0">
+               <br><em>&emsp; Tomato sauce, fresh mozzarella with fresh basil</em>
+               <br><br><br>
+               <label for="pepperoni-p">&bullet; Stone baked Pepperoni &emsp; €12.70</label>
+               <input type="text" id="pepperoni-p" class="quantity-box" value="0">
+               <br><em>&emsp; With parmesan cheese and fresh basil</em>
+               <hr>
+               <h3>PASTA</h3>
+               <label for="ragu">&bullet; PAPPARDELLE AL RAGU ALLA BOLOGNESE &emsp; €9.50</label>
+               <input type="text" id="ragu" class="quantity-box" value="0">
+               <br><em>&emsp; Our signature Bolognese style ragu.  Pancetta, beef and pork slow cooked over 4 hours and combined in the pan with butter, 14 month Parmigiano-Reggiano cheese and Pappardelle, thin wide strips of pasta made from a rich egg yolk dough</em><br><br><br>
+               <label for="carbonara">&bullet; TAGLITELLE CARBONARA &emsp; €9.50</label>
+               <input type="text" id="carbonara" class="quantity-box" value="0">
+               <br><em>&emsp; Smoked Pancetta fried until crispy then tossed with taglietelle and combined with egg, black pepper and Pecorino Romano cheese</em>
+               <hr>
+               <h3>DESSERTS</h3>
+               <label for="nutella_p">&bullet; Nutella Pizza &emsp; €8.50</label>
+               <input type="text" id="nutella_p" class="quantity-box" value="0">
+               <br><em>&emsp; Our signature base smothered in nutella</em><br><br><br>
+               <label for="affogato">&bullet; Frozen Affogato &emsp; €3.70</label>
+               <input type="text" id="affogato" class="quantity-box" value="0">
+               <br><em>&emsp; Vanilla ice cream topped with espresso</em><br><br><br>
+               <label for="tiramisu">&bullet; Hazelnut Tiramisu&emsp; €4.50</label>
+               <input type="text" id="tiramisu" class="quantity-box" value="0">
+               <br><em>&emsp; Our cassic tiramisu with kinder bueno topping and hazelnuts</em>
+               <hr>
+               <h3>SOFT DRINKS</h3>
+               <label for="coke">&bullet; Coca Cola &emsp; €2</label>
+               <input type="text" id="coke" class="quantity-box" value="0"><br><br><br>
+               <label for="san-orange">&bullet; San Pellegrino Orange &emsp; €2.50</label>
+               <input type="text" id="san-orange" class="quantity-box" value="0"><br><br><br>
+               <label for="water">&bullet; Still Water &emsp; €1</label>
+               <input type="text" id="water" class="quantity-box" value="0"><br><br><br>
+               <label for="sparkling-water">&bullet; San Pellegrino Sparkling Water &emsp; €1.50</label>
+               <input type="text" id="sparkling-water" class="quantity-box" value="0">
+            </form>
+            <!-- When the button with the id orderNow is pressed a JavaScript function will ouput the total cost of the user' order into the div with the id order_info. -->
+            <br><br><button id="orderNow">Order Now</button><br>
+            <div id="order_info"></div>
+            <br>
+            <!-- Ask the user to enter some details such as their name and phone number to confirm their order which will be read from in the order_confirm.php file. -->
+            <div id="collection_info" style="display: none;">
+               <strong>Enter the following details to confirm your order! :</strong><br><br>
+               <form action="order_confirmation.php" method="get">
+                  <label for="name">*First Name:</label>
+                  <input type="text" name="name" id="name"><br><br>
+                  <label for="phone_num">*Phone Number:</label>
+                  <input type="text" id="phone_num"><br><br>
+                  <label for="email">Email:</label>
+                  <input type="text" id="email"> (Optional)<br><br>
+                  <div id="delivery_info" style="display: none;">
+                     <label for="address1">Address: <br><br>Line 1:</label>
+                     <input type="text" id="address1"><br><br>
+                     <label for="address2">Line 2:</label>
+                     <input type="text" id="address2"><br><br>
+                     <label for="address_town">Town:</label>
+                     <input type="text" id="address_town"><br><br>
+                     <label for="address_city_county">City/County</label>
+                     <input type="text" id="address_city_county"><br><br>
+                     <label for="address_code">Eircode</label>
+                     <input type="text" id="address_code"><br><br>
+                  </div>
+                  <div id="payment_info">
+                     <br>
+                     <strong>Enter the following payment information: </strong><br><br>
+                     <strong>Please Select:</strong>
+                     <label for="visa_payment">VISA</label>
+                     <input type="radio" name="payment_type" id="visa_payment">
+                     <strong>&nbsp;<u>OR</u>&nbsp;</strong>
+                     <label for="mastercard_payment">MASTERCARD</label>
+                     <input type="radio" name="payment_type" id="mastercard_payment">
+                     <strong>&nbsp;<u>OR</u>&nbsp;</strong>
+                     <label for="cash_payment">CASH</label>
+                     <input type="radio" name="payment_type" id="cash_payment">
+                     (ignore card information for cash payments)<br><br>
+                     <label for="cardholder_name">Cardholder Name:</label>
+                     <input type="text" id="cardholder_name"><br><br>
+                     <label for="card_Num">Card Number:</label>
+                     <input type="text" id="card_Num"><br><br>
+                     <label for="exp_date">Expiry Date:</label>
+                     <input type="text" id="exp_date"><br><br>
+                     <label for="cvv">CVV:</label>
+                     <input type="text" id="cvv"><br><br>
+                  </div>
+                  <br><label for="time">When do you want to collect your order?</label>
+                  <select id="time" name="time">
+                     <option value="ASAP">ASAP</option>
+                     <option value="1 hour">1 Hour</option>
+                     <option value="2 hours">2 Hours</option>
+                     <option value="3 hours">3 Hours</option>
+                     <option value="4 hours">4 Hours</option>
+                     <option value="5 hours">5 Hours</option>
+                  </select>
+                  <br><br><br>
+                  <input type="submit" value="Confirm Order" id="confirm_order" >
+               </form>
+               <br><br><br><br>
+            </div>
+         </div>
+      </div>
+      <br><br>
+      <!-- Website footer containing the restaurant's name, address and phone number. -->
+      <footer style="text-align: center; margin: 0%;">
+         <hr>
+         <h2>Al Forno &copy;</h2>
+         O'Connell Street Upper,<br>
+         Dublin 1<br>
+         01548614624
+         <br><br>
+      </footer>
+   </body>
+</html>

@@ -1,0 +1,274 @@
+/* CSS for the Al Forno Italian Restaurant Website */
+
+
+/* The CSS for this website uses a combination of adaptive and fluid layout styles creates a responsive layout throughout the website. */
+
+
+/* CSS for the body tag in all the html pages in this website */
+
+body {
+	padding: 0;
+	margin: 0;
+	/* Set the font type to arial */
+	font-family: Arial, sans-serif;
+	color: #303030;
+}
+
+
+/* CSS for the navigation bar */
+
+nav {
+	/* Use a series of percentages as part of a fluid layout for heights, widths, padding and margins for various items on the website. */
+	/* This will allow items to take up the same amount of space on each device. */
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: absolute;
+	top: -3%;
+	color: black;
+	font-size: 1.5rem;
+}
+
+
+/* Set the home element on the navbar to bold font as it emphases that its the main home page link. */
+
+nav .home {
+	font-weight: bold;
+}
+
+nav div.group-elements {
+	padding: 50px;
+}
+
+a.nav-element {
+	text-decoration: none;
+	color: inherit;
+	border-bottom: 3px solid rgba(0, 0, 0, 0);
+}
+
+a.nav-element:hover {
+	border-bottom: 3px solid #303030;
+}
+
+.group-elements.menus .nav-element:not(:first-child) {
+	margin-left: 4rem;
+}
+
+
+/* CSS for the index.html page */
+
+
+/* Split the homepage into two sections, one section for a big image and the other for information about the restaurant. */
+
+section {
+	height: 100vh;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+/* Set the background wallpaper for the top section of the homepage. */
+
+section.sect-1 {
+	/* Pizza Oven Image Source: https://cdn.pixabay.com/photo/2017/07/25/09/08/pizza-oven-2537308_1280.jpg */
+	background-image: url(media/pizza-oven.jpeg);
+}
+
+section.sect-2 {
+	display: inline;
+}
+
+
+/* Inline the text to the center in the mission section of the homepage. */
+
+#mission {
+	text-align: center;
+}
+
+
+/* The order button is center in the first section on the homepage and brings you to the order menu in order.html when clicked. */
+
+#orderButton {
+	background-color: Transparent;
+	background-repeat: no-repeat;
+	border: none;
+	/* Set the cursor to pointer to inform the user that its a button. */
+	cursor: pointer;
+	overflow: hidden;
+	font-weight: bold;
+	font-size: 1.5rem;
+}
+
+section h2 {
+	position: absolute;
+	height: 1%;
+	width: auto;
+	padding: 1%;
+	background-color: #fff;
+	font-weight: bold;
+	border-bottom: 1rem solid white;
+}
+
+
+/* CSS for the order.html page */
+
+
+/* The size of the text box for inputting the quantity of each item that you want in the order.html page. */
+
+.quantity-box {
+	width: 14px;
+}
+
+
+/* CSS for the gallery.html page */
+
+
+/* The pictures div in the gallery.html page. */
+
+div.pictures {
+	/* Centre the images to the middle of the screen. */
+	margin: 0 auto;
+	margin-bottom: 2%;
+	border: 1px solid #ccc;
+	width: 60%;
+}
+
+
+/* Add a border around a picture if the user hovers of it */
+
+div.pictures:hover {
+	border: 1px solid #777;
+}
+
+div.pictures img {
+	width: 100%;
+	height: auto;
+}
+
+
+/* Inline the caption for it picture in the centre and below the picture. */
+
+.caption {
+	padding: 15px;
+	text-align: center;
+}
+
+
+/* The webites footer */
+
+footer {
+	margin: 2%;
+}
+
+
+/* CSS for the about.html page */
+
+
+/* The table contains the information on how to contact the restaurant. */
+
+table {
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	width: 18%;
+}
+
+td {
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 20px;
+}
+
+
+/* Change the colour of every second row to grey for stylish purposes. */
+
+tr:nth-child(even) {
+	background-color: #dddddd;
+}
+
+#margin-about {
+	text-align: center;
+}
+
+
+/* Set the width of each award image to 20% */
+
+.award-images {
+	width: 20%;
+	transition: transform 5s;
+}
+
+
+/* Inline the images in the about.html section of the website. */
+
+#awards {
+	display: inline-block;
+	text-align: center;
+}
+
+
+/* When the user hovers of one of the images of the awards, increase their size */
+
+.award-images:hover {
+	-ms-transform: scale(1.5);
+	-webkit-transform: scale(1.5);
+	transform: scale(1.5);
+}
+
+
+/* Adjust the size and position for the html elements for compatibility with smaller devices. */
+
+
+/* This is part of an adaptive layout */
+
+@media screen and (max-width: 890px) {
+	
+	nav {
+		top: -5%;
+	}
+
+	nav div.group-elements {
+		margin-left: -5%;
+	}
+
+	nav div.group-elements {
+		padding: 60px;
+	}
+
+	#mission {
+		padding-left: 2%;
+		padding-right: 2%;
+	}
+
+	#order {
+		padding-top: 10%;
+		margin-left: 4%;
+		margin-right: 4%;
+	}
+
+	#gallery {
+		padding-top: 10%;
+	}
+
+	#about {
+		padding-top: 10%;
+	}
+
+	.iframes {
+		width: 400px;
+	}
+
+	.award-images {
+		width: 32%;
+	}
+
+	/* End the increase in size of the award images when they are hovered over on a smaller screen. */
+	.award-images:hover {
+		transform: none;
+	}
+	
+}
